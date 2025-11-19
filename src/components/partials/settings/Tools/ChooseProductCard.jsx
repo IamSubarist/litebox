@@ -3,29 +3,29 @@ import React from "react";
 const cardData = [
   {
     icon: "/icons/instagram.svg",
-    description: "Model 1",
+    description: "Product 1",
     type: "Connect",
-    platform: "Model 1",
+    platform: "Product 1",
   },
   {
     icon: "/icons/tikTok.svg",
-    description: "Model 2",
+    description: "Product 2",
     type: "Connect",
-    platform: "Model 2",
+    platform: "Product 2",
   },
   {
     icon: "/icons/youTube.svg",
-    description: "Model 3",
+    description: "Product 3",
     type: "Connect",
-    platform: "Model 3",
+    platform: "Product 3",
   },
 ];
 
-const MediaFeedConnect = ({ onAddBlock }) => {
+const ChooseProductCard = ({ onAddBlock }) => {
   return (
     <div className="flex flex-col border border-slate-200 dark:border-slate-700 p-4 rounded-[6px] gap-3 ">
       <div className="flex justify-between items-center font-semibold">
-        <p>Choose your model:</p>
+        <p>Choose your products:</p>
         {/* <span className="flex justify-center items-center">
           <p className="bg-green-400 text-[11px] font-semibold px-2 py-[2px] text-white rounded-[6px]">
             Earn
@@ -54,4 +54,4 @@ const MediaFeedConnect = ({ onAddBlock }) => {
   );
 };
 
-export default MediaFeedConnect;
+export default ChooseProductCard;

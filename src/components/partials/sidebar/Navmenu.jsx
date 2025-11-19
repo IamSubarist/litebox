@@ -6,6 +6,7 @@ import { toggleActiveChat } from "@/pages/app/chat/store";
 import { useDispatch } from "react-redux";
 import useMobileMenu from "@/hooks/useMobileMenu";
 import Submenu from "./Submenu";
+import { toast } from "react-toastify";
 
 const Navmenu = ({ menus }) => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -22,6 +23,21 @@ const Navmenu = ({ menus }) => {
   const locationName = location.pathname.replace("/", "");
   const [mobileMenu, setMobileMenu] = useMobileMenu();
   const dispatch = useDispatch();
+
+  const handleMenuClick = (e, item) => {
+    if (
+      item.title === "Profile" ||
+      item.title === "FAQ" ||
+      item.link === "profile" ||
+      item.link === "faq"
+    ) {
+      e.preventDefault();
+      toast.info("Данная страница недоступна в демо-режиме", {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    }
+  };
 
   useEffect(() => {
     let submenuIndex = null;
@@ -60,7 +76,11 @@ const Navmenu = ({ menus }) => {
           >
             {/* single menu with no childred*/}
             {!item.child && !item.isHeadr && (
-              <NavLink className="menu-link" to={item.link}>
+              <NavLink
+                className="menu-link"
+                to={item.link}
+                onClick={(e) => handleMenuClick(e, item)}
+              >
                 <span className="menu-icon flex-grow-0">
                   <Icon icon={item.icon} />
                 </span>

@@ -24,6 +24,8 @@ import {
   closeWidgetEditor,
 } from "@/pages/app/projects/store";
 import BackgroundEditor from "./Tools/BackgroundEditor";
+import ChooseProductCard from "./Tools/ChooseProductCard";
+import ChoosePoseCard from "./Tools/ChoosePoseCard";
 
 const Settings = () => {
   const isOpen = useSelector((state) => state.layout.customizer);
@@ -179,7 +181,7 @@ const Settings = () => {
             className="text-slate-50 text-lg animate-spin"
           />
           <span className="hidden md:inline-block ltr:ml-2 rtl:mr-2">
-            Builder
+            AI Config
           </span>
         </span>
       )}
@@ -248,8 +250,12 @@ const Settings = () => {
               <>
                 <header className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 -mx-6 px-6 py-[15px] mb-6">
                   <div>
-                    <span className="font-bold block text-2xl text-slate-900 dark:text-[#eee]">
-                      + Add to your widget
+                    <span className="tracking-[-0.3px] font-bold flex items-center gap-2 text-xl text-slate-900 dark:text-[#eee]">
+                      <Icon
+                        icon="clarity:settings-line"
+                        className="text-slate-50 text-lg"
+                      />
+                      Configuring Image Generation
                     </span>
                     <span className="block text-sm font-light text-[#68768A] dark:text-[#eee]">
                       Customize & Preview in Real Time
@@ -264,7 +270,12 @@ const Settings = () => {
                 </header>
                 <div className=" space-y-4">
                   <MediaFeedConnect onAddBlock={handleAddBlock} />
-                  <ContentSharing onAddBlock={handleAddBlock} />
+                  <ChooseProductCard onAddBlock={handleAddBlock} />
+                  <ChoosePoseCard onAddBlock={handleAddBlock} />
+                  {/* <ContentSharing onAddBlock={handleAddBlock} /> */}
+                  <button className="btn btn-primary w-full py-2 rounded-[4px]">
+                    Generate
+                  </button>
                 </div>
               </>
             )}

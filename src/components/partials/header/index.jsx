@@ -114,7 +114,10 @@ const Header = ({ className = "custom-class" }) => {
           ) : null}
           {/* Nav Tools  */}
           <div className="nav-tools flex items-center lg:space-x-6 space-x-3 rtl:space-x-reverse max-[1279px]:order-3">
-            <Language />
+            {/* <Language /> */}
+            <div className="text-sm text-slate-500 dark:text-slate-400">
+              Balance: {Number(1000).toLocaleString("ru-RU")} RUB
+            </div>
             {/* <SwitchDark /> */}
             {/* <MonoChrome /> */}
             {/* {width >= breakpoints.md && <Message />} */}

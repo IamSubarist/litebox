@@ -3,6 +3,7 @@ import { Collapse } from "react-collapse";
 import { NavLink } from "react-router-dom";
 import Icon from "@/components/ui/Icon";
 import Multilevel from "./Multi";
+import { toast } from "react-toastify";
 
 const Submenu = ({ activeSubmenu, item, i }) => {
   const [activeMultiMenu, setMultiMenu] = useState(null);
@@ -11,6 +12,18 @@ const Submenu = ({ activeSubmenu, item, i }) => {
       setMultiMenu(null);
     } else {
       setMultiMenu(j);
+    }
+  };
+
+  const handleSubmenuClick = (e, subItem) => {
+    if (subItem.childtitle === "Profile" || subItem.childtitle === "FAQ" || 
+        subItem.childtitle === "Prfoile" || subItem.childlink === "profile" || 
+        subItem.childlink === "faq") {
+      e.preventDefault();
+      toast.info("Данная страница недоступна в демо-режиме", {
+        position: "top-right",
+        autoClose: 2000,
+      });
     }
   };
   return (
@@ -53,7 +66,7 @@ const Submenu = ({ activeSubmenu, item, i }) => {
                 />
               </div>
             ) : (
-              <NavLink to={subItem.childlink}>
+              <NavLink to={subItem.childlink} onClick={(e) => handleSubmenuClick(e, subItem)}>
                 {({ isActive }) => (
                   <span
                     className={`${

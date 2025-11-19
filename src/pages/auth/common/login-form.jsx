@@ -11,7 +11,7 @@ import { handleLogin } from "./store";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-const API_BASE_URL = "https://socialdash.leverageindo.group/api";
+const API_BASE_URL = "https://litebox.leverageindo.group/api";
 const schema = yup
   .object({
     email: yup.string().email("Invalid email").required("Email is Required"),
@@ -135,6 +135,13 @@ const LoginForm = () => {
     }
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    toast.info("Данная функция недоступна в демо-режиме", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 ">
       <Textinput
@@ -172,7 +179,8 @@ const LoginForm = () => {
         </div>
 
         <Link
-          to="/forgot-password"
+          // to="/forgot-password"
+          onClick={(e) => handleClick(e)}
           className="text-sm text-slate-800 dark:text-slate-400 leading-6 font-medium whitespace-nowrap sm:ml-2"
         >
           Forgot Password?{" "}

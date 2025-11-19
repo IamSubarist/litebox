@@ -118,7 +118,10 @@ const Profile = () => {
     window.addEventListener("profilePhotoUpdated", handleProfilePhotoUpdate);
 
     return () => {
-      window.removeEventListener("profilePhotoUpdated", handleProfilePhotoUpdate);
+      window.removeEventListener(
+        "profilePhotoUpdated",
+        handleProfilePhotoUpdate
+      );
     };
   }, [fetchProfilePhoto]);
 
@@ -227,6 +230,12 @@ const Profile = () => {
             <div
               onClick={() => item.action()}
               className={`${
+                item.label === "Profile" ||
+                item.label === "Faq" ||
+                item.label === "Price"
+                  ? "cursor-pointer pointer-events-none"
+                  : ""
+              } ${
                 active
                   ? "bg-slate-100 text-slate-900 dark:bg-slate-600 dark:text-slate-300 dark:bg-opacity-50"
                   : "text-slate-600 dark:text-slate-300"

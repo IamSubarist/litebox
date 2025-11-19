@@ -1,5 +1,6 @@
 import TelegramLoginButton from "../telegramLoginButton";
 import { toast } from "react-toastify";
+import telegram from "@/assets/images/icon/telegram.svg";
 
 // SVG компоненты для социальных сетей (всегда цветные)
 const InstagramIcon = ({ className = "" }) => (
@@ -129,10 +130,18 @@ const Social = () => {
     });
   };
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    toast.info("Данная функция недоступна в демо-режиме", {
+      position: "top-right",
+      autoClose: 2000,
+    });
+  };
+
   return (
     <ul className="flex">
       {/* Instagram */}
-      <li className="flex-1 hover:scale-110 duration-300">
+      {/* <li className="flex-1 hover:scale-110 duration-300">
         <a
           href="#"
           onClick={(e) => handleSocialClick(e, "Instagram")}
@@ -140,9 +149,9 @@ const Social = () => {
         >
           <InstagramIcon className="w-10 h-10 rounded-full" />
         </a>
-      </li>
+      </li> */}
       {/* XTwitter */}
-      <li className="flex-1 hover:scale-110 duration-300">
+      {/* <li className="flex-1 hover:scale-110 duration-300">
         <a
           href="#"
           onClick={(e) => handleSocialClick(e, "X/Twitter")}
@@ -150,9 +159,9 @@ const Social = () => {
         >
           <XTwitterIcon className="w-10 h-10 rounded-full" />
         </a>
-      </li>
+      </li> */}
       {/* Facebook */}
-      <li className="flex-1 hover:scale-110 duration-300">
+      {/* <li className="flex-1 hover:scale-110 duration-300">
         <a
           href="#"
           onClick={(e) => handleSocialClick(e, "Facebook")}
@@ -160,11 +169,23 @@ const Social = () => {
         >
           <FacebookIcon className="w-10 h-10 rounded-full" />
         </a>
-      </li>
+      </li> */}
       {/* Telegram - не трогаем */}
-      <TelegramLoginButton />
+      <div
+        onClick={(e) => {
+          handleClick(e);
+        }}
+      >
+        {/* <TelegramLoginButton /> */}
+        <a
+          // href="#"
+          className="cursor-pointer inline-flex h-10 w-10 bg-[#0A63BC] text-white text-2xl flex-col items-center justify-center rounded-full"
+        >
+          <img src={telegram} alt="" />
+        </a>
+      </div>
       {/* Google */}
-      <li className="flex-1 hover:scale-110 duration-300">
+      {/* <li className="flex-1 hover:scale-110 duration-300">
         <a
           href="#"
           onClick={(e) => handleSocialClick(e, "Google")}
@@ -172,7 +193,7 @@ const Social = () => {
         >
           <GoogleIcon className="w-10 h-10 rounded-full" />
         </a>
-      </li>
+      </li> */}
     </ul>
   );
 };

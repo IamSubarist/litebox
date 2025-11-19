@@ -739,8 +739,8 @@ const ProjectPostPage = () => {
           } items-center rtl:space-x-reverse`}
         >
           <Button
-            icon="mdi-light:eye"
-            text="Preview"
+            icon="mdi-light:download"
+            text="Download all generations"
             className={`bg-gray-600 hover:bg-gray-700 text-white h-min text-sm font-normal ${
               isMobileMenu
                 ? "text-xs px-3 py-1.5 flex-1 min-w-[calc(33.333%-0.33rem)]"
@@ -751,8 +751,8 @@ const ProjectPostPage = () => {
           />
 
           <Button
-            icon="heroicons-outline:plus"
-            text="Add widget"
+            icon="clarity:settings-line"
+            text="AI config"
             className={`bg-gray-600 hover:bg-gray-700 text-white h-min text-sm font-normal ${
               isMobileMenu
                 ? "text-xs px-3 py-1.5 flex-1 min-w-[calc(33.333%-0.33rem)]"
@@ -767,7 +767,7 @@ const ProjectPostPage = () => {
             }}
           />
 
-          <Button
+          {/* <Button
             icon="ph:video-thin"
             text="Add video"
             className={`bg-gray-600 hover:bg-gray-700 text-white h-min text-sm font-normal ${
@@ -826,7 +826,7 @@ const ProjectPostPage = () => {
             }`}
             iconClass={isMobileMenu ? "text-base" : "text-lg"}
             onClick={handleAdultToggle}
-          />
+          /> */}
         </div>
       </div>
 

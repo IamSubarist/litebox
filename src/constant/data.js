@@ -1,25 +1,25 @@
 export const menuItemsCustom = [
-  {
-    title: "Dashboard",
-    icon: "heroicons-outline:home",
-    isOpen: true,
-    isHide: true,
-    link: "dashboard",
-  },
+  // {
+  //   title: "",
+  //   icon: "heroicons-outline:home",
+  //   isOpen: true,
+  //   isHide: true,
+  //   link: "dashboard",
+  // },
 
   {
-    title: "Page",
+    title: "AI generation",
     icon: "heroicons-outline:document",
     isHide: true,
     link: "project",
   },
 
-  {
-    title: "Products",
-    icon: "heroicons-outline:chat",
-    isHide: true,
-    link: "products",
-  },
+  // {
+  //   title: "Products",
+  //   icon: "heroicons-outline:chat",
+  //   isHide: true,
+  //   link: "products",
+  // },
 
   {
     title: "Profile",
