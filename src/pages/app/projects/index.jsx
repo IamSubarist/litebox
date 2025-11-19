@@ -55,6 +55,7 @@ import {
   setLeftColButtonWidgetDeleteCallback,
 } from "@/components/partials/settings/Tools/ButtonWidgetEditor";
 import { setLeftColProfileSaveCallback } from "@/components/partials/settings/Tools/ProfileWidgetEditor";
+import Profile from "../../../components/widgets/profileWidget";
 const LeftCol = React.lazy(() =>
   import("../../../components/widgets/leftColWidget")
 );
@@ -730,7 +731,7 @@ const ProjectPostPage = () => {
       <ToastContainer />
       <div className="flex flex-wrap justify-between items-center mb-4">
         <h4 className="font-medium lg:text-2xl text-xl capitalize text-slate-900 inline-block ltr:pr-4 rtl:pl-4">
-          Project
+          AI Generation
         </h4>
 
         <div
@@ -830,125 +831,19 @@ const ProjectPostPage = () => {
         </div>
       </div>
 
-      <div
-        className={`min-h-[85vh] bg-[#131517] ${
-          isSmallScreen ? "flex flex-col" : "flex"
-        }`}
-      >
-        <div
-          className={`${
-            isSmallScreen ? "w-full order-1" : "w-[500px] order-1"
-          }`}
-        >
-          <LeftCol
-            redactor={true}
-            circle={circle}
-            profil={profil}
-            profileData={profileData}
-            onProfileEdit={() => {
-              dispatch(handleCustomizer(true));
-              dispatch(
-                openWidgetEditor({
-                  widgetType: "leftColProfile",
-                  widgetData: profileData,
-                })
-              );
-            }}
-            hasVideoWidget={hasVideoWidget}
-            videoData={videoData}
-            onVideoEdit={() => {
-              dispatch(handleCustomizer(true));
-              dispatch(
-                openWidgetEditor({
-                  widgetType: "leftColVideo",
-                  widgetData: videoData,
-                })
-              );
-            }}
-            onVideoDelete={() => {
-              setVideoData({ videoUrl: null, thumbnail: null });
-              setHasVideoWidget(false);
-            }}
-            hasSocialLinkWidget={hasSocialLinkWidget}
-            socialLinkData={socialLinkData}
-            onSocialLinkEdit={() => {
-              dispatch(handleCustomizer(true));
-              dispatch(
-                openWidgetEditor({
-                  widgetType: "leftColSocialLink",
-                  widgetData: socialLinkData,
-                })
-              );
-            }}
-            onSocialLinkDelete={() => {
-              setSocialLinkData({ socialLinks: [] });
-              setHasSocialLinkWidget(false);
-            }}
-            hasButtonWidget={hasButtonWidget}
-            buttonData={buttonData}
-            onButtonEdit={() => {
-              dispatch(handleCustomizer(true));
-              dispatch(
-                openWidgetEditor({
-                  widgetType: "leftColButtonWidget",
-                  widgetData: buttonData,
-                })
-              );
-            }}
-            onButtonDelete={() => {
-              setButtonData({ buttons: [] });
-              setHasButtonWidget(false);
-            }}
-          />
+      <div className={`w-full flex gap-10 items-start`}>
+        <div className="flex-shrink-0">
+          <div className="w-[406px] h-[600px] bg-[#dddddd] rounded-[4px]" />
         </div>
 
-        {/* Основной контент */}
-        <div
-          className={`${isSmallScreen ? "w-full order-2" : "flex-1 order-2"}`}
-        >
-          <div
-            className={`min-h-[100vh] py-5 ${
-              isSmallScreen
-                ? "px-4"
-                : circle
-                ? "ps-[50px] pe-[100px]"
-                : "px-[25px]"
-            }`}
-          >
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCenter}
-              onDragEnd={handleDragEnd}
-            >
-              <SortableContext
-                items={(() => {
-                  const visibleBlocks = projectBlocks.filter(
-                    (block) => block.type !== "background"
-                  );
-                  return visibleBlocks.map((block) => block.id);
-                })()}
-                strategy={verticalListSortingStrategy}
-              >
-                {(() => {
-                  const visibleBlocks = projectBlocks.filter(
-                    (block) => block.type !== "background"
-                  );
-                  return visibleBlocks.length === 0 ? (
-                    <div className="flex items-center justify-center h-[200px] text-slate-400">
-                      <p>Empty</p>
-                    </div>
-                  ) : (
-                    visibleBlocks.map((block) => (
-                      <SortableBlock
-                        key={block.id}
-                        block={block}
-                        redactor={true}
-                      />
-                    ))
-                  );
-                })()}
-              </SortableContext>
-            </DndContext>
+        <div className="flex-1 flex-col">
+          <p className="mb-5 text-[24px] leading-[24px] font-medium text-slate-900 dark:text-[#cbd5e1]">
+            Your latest generations
+          </p>
+          <div className="flex-1 grid grid-cols-9 gap-4">
+            {[...Array(24)].map((_, index) => (
+              <div className="w-full h-[150px] bg-[#dddddd] rounded-[4px]"></div>
+            ))}
           </div>
         </div>
       </div>

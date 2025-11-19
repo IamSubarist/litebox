@@ -33,7 +33,9 @@ const Layout = () => {
 
   useEffect(() => {
     // Показываем Settings на странице проекта (/project) или деталях проекта (/projects/:id)
-    const isProjectPage = location.pathname === "/project" || location.pathname.startsWith("/projects/");
+    const isProjectPage =
+      location.pathname === "/project" ||
+      location.pathname.startsWith("/projects/");
     setSettingsIsShow(isProjectPage);
   }, [location]);
 
@@ -83,7 +85,7 @@ const Layout = () => {
         }`}
       >
         {/* md:min-h-screen will h-full*/}
-        <div className="page-content   page-min-height  ">
+        <div className="page-content">
           <div
             className={
               contentWidth === "boxed" ? "container mx-auto" : "container-fluid"
