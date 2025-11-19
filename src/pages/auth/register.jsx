@@ -36,7 +36,7 @@ const register = () => {
                       <img src={SDLogo} alt="" className="mx-auto w-10 h-10" />
                     </Link>
                     <p className="text-2xl font-bold leading-[15px] text-white">
-                      SocialDash
+                      LiteBox
                     </p>
                   </div>
                 </div>
@@ -45,7 +45,7 @@ const register = () => {
                     Sign up
                   </p>
                   <div className="text-slate-500 text-base sm:text-base md:text-[16px] lg:text-[16px] xl:text-[16px] break-words px-2">
-                    Create an account to start using SocialDash
+                    Create an account to start using LiteBox
                   </div>
                 </div>
                 <RegForm />
@@ -68,7 +68,7 @@ const register = () => {
                 </div>
               </div>
               <div className="auth-footer text-center">
-                Copyright 2025, SocialDash All Rights Reserved.
+                Copyright 2025, LiteBox All Rights Reserved.
               </div>
             </div>
           </div>

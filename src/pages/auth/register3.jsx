@@ -43,7 +43,7 @@ const register3 = () => {
                   Sign up
                 </h4>
                 <div className="text-slate-500 dark:text-slate-400 text-base">
-                  Create an account to start using SocialDash
+                  Create an account to start using LiteBox
                 </div>
               </div>
               <RegForm />

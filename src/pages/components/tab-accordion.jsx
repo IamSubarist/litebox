@@ -28,7 +28,7 @@ const items = [
       "Jornalists call this critical, introductory section the  and when bridge properly executed, it's the that carries your reader from anheadine try at attention-grabbing to the body of your blog post.",
   },
   {
-    title: "Where i can learn more about using SocialDash?",
+    title: "Where i can learn more about using LiteBox?",
     content:
       "Jornalists call this critical, introductory section the  and when bridge properly executed, it's the that carries your reader from anheadine try at attention-grabbing to the body of your blog post.",
   },

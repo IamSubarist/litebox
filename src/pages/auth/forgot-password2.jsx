@@ -47,7 +47,7 @@ const ForgotPass2 = () => {
               </div>
             </div>
             <div className="auth-footer text-center">
-              Copyright 2025, SocialDash All Rights Reserved.
+              Copyright 2025, LiteBox All Rights Reserved.
             </div>
           </div>
         </div>

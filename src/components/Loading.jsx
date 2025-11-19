@@ -15,7 +15,7 @@ const Loading = () => {
           <div className="flex items-center justify-center gap-2">
             <img src={SDLogo} alt="" className="mx-auto w-10 h-10" />
             <p className="text-2xl font-bold leading-[15px] text-white">
-              SocialDash
+              LiteBox
             </p>
           </div>
         </div>

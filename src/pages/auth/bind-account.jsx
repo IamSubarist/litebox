@@ -35,7 +35,7 @@ const BindAccount = () => {
                       <img src={SDLogo} alt="" className="mx-auto w-10 h-10" />
                     </Link>
                     <p className="text-2xl font-bold leading-[15px] text-white">
-                      SocialDash
+                      LiteBox
                     </p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ const BindAccount = () => {
                 <BindAccountForm />
               </div>
               <div className="auth-footer text-center">
-                Copyright 2025, SocialDash All Rights Reserved.
+                Copyright 2025, LiteBox All Rights Reserved.
               </div>
             </div>
           </div>

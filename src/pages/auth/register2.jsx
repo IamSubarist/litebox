@@ -31,7 +31,7 @@ const register2 = () => {
                 <div className="text-center 2xl:mb-10 mb-5">
                   <h4 className="font-medium">Sign up</h4>
                   <div className="text-slate-500 dark:text-slate-400 text-base">
-                    Create an account to start using SocialDash
+                    Create an account to start using LiteBox
                   </div>
                 </div>
                 <RegForm />
@@ -54,7 +54,7 @@ const register2 = () => {
                 </div>
               </div>
               <div className="auth-footer text-center">
-                Copyright 2025, SocialDash All Rights Reserved.
+                Copyright 2025, LiteBox All Rights Reserved.
               </div>
             </div>
           </div>
